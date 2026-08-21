@@ -1,0 +1,1 @@
+a beautiful one of a kind package written in go to scale any ai solution infinitely blablahblahbalhbhl, just kidding. this contributes no shareholder value. this has no users. i just want to learn go and implement something lower level. this does not generate 10000m arr. 
