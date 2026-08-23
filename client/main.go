@@ -7,7 +7,10 @@ import "golang.org/x/net/html"
 import "fmt"
 
 func fooHandler(w http.ResponseWriter, r *http.Request) {
+	log.Print("hi")
 	fmt.Fprintf(w, "hello\n")
+	fmt.Fprintf(w, "hello\n")
+	fmt.Fprintf(w, r.Method)
 }
 
 // this is more like a client than a server

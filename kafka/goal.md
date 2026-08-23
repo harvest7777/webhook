@@ -1,0 +1,3 @@
+- [ ] install kafka
+- [ ] make a topic
+- [ ] enqueue something
