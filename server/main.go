@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	url := "http://restapi3.apiary.io/notes"
+	url := "http://localhost:8080/foo"
 	fmt.Println("URL:>", url)
 
 	var jsonStr = []byte(`{"title":"Buy cheese and bread for breakfast."}`)
