@@ -10,6 +10,7 @@ func fooHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "hello\n")
 }
 
+// this is more like a client than a server
 func main() {
 	fmt.Println("starting web server")
 

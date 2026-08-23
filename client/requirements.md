@@ -1,0 +1,1 @@
+- [ ] the client can define what endpoint to send events to
