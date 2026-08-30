@@ -9,6 +9,8 @@ metadata:
     name: root 
 spec:
   project: default
+  directory:
+    recurse: true   
   source:
     repoURL: https://github.com/harvest7777/webhook
     targetRevision: HEAD
