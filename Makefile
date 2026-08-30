@@ -23,7 +23,7 @@ start-cluster: check-required-tools
 .PHONY: install-argo
 install-argo: start-cluster
 	kubectl create namespace argocd --dry-run=client -o yaml | kubectl apply -f -
-	kubectl apply -n argocd --server-side --force-conflicts -f manifests/apps/argocd/argocd.yaml
+	kubectl apply -n argocd --server-side --force-conflicts -f manifests/app-manifests/argocd/argocd.yaml
 	kubectl wait --for=condition=available --timeout=300s -n argocd deploy/argocd-server
 
 .PHONY: apply-root-app
