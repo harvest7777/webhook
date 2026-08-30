@@ -10,7 +10,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: oci://quay.io/strimzi-helm
+    repoURL: quay.io/strimzi-helm
     chart: strimzi-kafka-operator
     targetRevision: 1.2.0
     helm:
