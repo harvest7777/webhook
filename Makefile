@@ -4,8 +4,6 @@ MAKEFLAGS += --warn-undefined-variables
 .DELETE_ON_ERROR:
 .DEFAULT_GOAL := help
 
-TARGET_DEFINITION_PATTERN := ^[a-z][a-zA-Z0-9_-]*:
-
 ARGO_VERSION := stable
 ARGO_INSTALL_URL := https://raw.githubusercontent.com/argoproj/argo-cd/$(ARGO_VERSION)/manifests/install.yaml
 
@@ -14,8 +12,9 @@ test:
 	@echo Processed makefiles: $(MAKEFILE_LIST).
 
 .PHONY: help
+help: TARGET_DEFINITION_PATTERN := ^[a-z][a-zA-Z0-9_-]*:
 help:
-	@grep -hE '$(TARGET_DEFINITION_PATTERN)' $(MAKEFILE_LIST) | cut -d: -f1 | sort
+	@grep -hE '$(TARGET_DEFINITION_PATTERN)' $(MAKEFILE_LIST) | cut -d: -f1 | sort -u
 
 .PHONY: check-required-tools
 check-required-tools:
