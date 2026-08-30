@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root 
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  labels:
+    name: root 
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/harvest7777/webhook
+    targetRevision: HEAD
+    path: manifests/apps
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: apps
+  syncPolicy:
+    syncOptions:    
+    - CreateNamespace=true 
