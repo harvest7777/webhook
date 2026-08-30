@@ -4,9 +4,6 @@ MAKEFLAGS += --warn-undefined-variables
 .DELETE_ON_ERROR:
 .DEFAULT_GOAL := help
 
-ARGO_VERSION := stable
-ARGO_INSTALL_URL := https://raw.githubusercontent.com/argoproj/argo-cd/$(ARGO_VERSION)/manifests/install.yaml
-
 .PHONY: test
 test:
 	@echo Processed makefiles: $(MAKEFILE_LIST).
@@ -28,6 +25,8 @@ start-cluster: check-required-tools
 	minikube start
 
 .PHONY: install-argo
+install-argo: ARGO_VERSION := stable
+install-argo: ARGO_INSTALL_URL = https://raw.githubusercontent.com/argoproj/argo-cd/$(ARGO_VERSION)/manifests/install.yaml
 install-argo: start-cluster
 	kubectl create namespace argocd --dry-run=client -o yaml | kubectl apply -f -
 	kubectl apply -n argocd -f $(ARGO_INSTALL_URL)
